@@ -1,0 +1,1311 @@
+/* =====================================================
+   CREATE AD PAGE
+===================================================== */
+
+.create-ad-page {
+
+    min-height: 100vh;
+
+    padding:
+        35px
+        20px
+        100px;
+
+    background: #f5f6f7;
+}
+
+
+/* =====================================================
+   CONTAINER
+===================================================== */
+
+.create-ad-container {
+
+    width: min(620px, 100%);
+
+    margin: 0 auto;
+}
+
+
+/* =====================================================
+   FORM
+===================================================== */
+
+.create-ad-form {
+
+    padding: 25px;
+
+    background: #ffffff;
+
+    border: 1px solid #eeeeef;
+
+    border-radius: 24px;
+
+    box-shadow:
+        0 10px 35px
+        rgba(20, 22, 25, .05);
+}
+
+
+/* =====================================================
+   FORM GROUP
+===================================================== */
+
+.form-group {
+
+    min-width: 0;
+
+    margin-bottom: 19px;
+}
+
+
+.form-group:last-child {
+
+    margin-bottom: 0;
+}
+
+
+/* =====================================================
+   TWO COLUMN ROW
+===================================================== */
+
+.form-row {
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 7fr)
+        minmax(0, 3fr);
+
+    gap: 14px;
+
+    width: 100%;
+
+    margin-bottom: 0;
+}
+
+
+.form-row .form-group {
+
+    width: 100%;
+
+    min-width: 0;
+
+    margin-bottom: 19px;
+}
+
+
+/* =====================================================
+   LABEL
+===================================================== */
+
+.form-group > label {
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #36393d;
+
+    font-size: 11px;
+
+    font-weight: 700;
+}
+
+
+/* =====================================================
+   INPUT WRAPPER
+===================================================== */
+
+.input-wrapper {
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    width: 100%;
+
+    height: 52px;
+
+    box-sizing: border-box;
+
+    background: #f8f8f9;
+
+    border: 1px solid #eeeeef;
+
+    border-radius: 14px;
+
+    transition:
+        background .2s ease,
+        border-color .2s ease,
+        box-shadow .2s ease;
+}
+
+
+/* =====================================================
+   INPUT ICON
+===================================================== */
+
+.input-wrapper > i:first-child {
+
+    width: 46px;
+
+    height: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    color: #a2a5aa;
+
+    font-size: 14px;
+
+    transition:
+        color .2s ease;
+}
+
+
+/* =====================================================
+   INPUT
+===================================================== */
+
+.input-wrapper input {
+
+    width: 100%;
+
+    height: 100%;
+
+    min-width: 0;
+
+    padding:
+        0
+        13px
+        0
+        0;
+
+    box-sizing: border-box;
+
+    color: #292c30;
+
+    font-family: inherit;
+
+    font-size: 13px;
+
+    font-weight: 500;
+
+    background: transparent;
+
+    border: none;
+
+    outline: none;
+}
+
+
+/* =====================================================
+   PLACEHOLDER
+===================================================== */
+
+.input-wrapper input::placeholder {
+
+    color: #b4b7bb;
+
+    font-weight: 400;
+}
+
+
+/* =====================================================
+   FOCUS
+===================================================== */
+
+.input-wrapper:focus-within {
+
+    background: #ffffff;
+
+    border-color: #ffb6a5;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(255, 90, 54, .08);
+}
+
+
+.input-wrapper:focus-within > i:first-child {
+
+    color: #ff5a36;
+}
+
+
+/* =====================================================
+   TEXTAREA
+===================================================== */
+
+.textarea-wrapper {
+
+    height: 100px;
+
+    align-items: flex-start;
+
+    padding-top: 0;
+}
+
+
+.textarea-wrapper > i:first-child {
+
+    height: 100px;
+
+    align-items: center;
+}
+
+
+.textarea-wrapper textarea {
+
+    width: 100%;
+
+    height: 90px;
+
+    min-width: 0;
+
+    min-height: 90px;
+
+    max-width: 100%;
+
+    max-height: 90px;
+
+    box-sizing: border-box;
+
+    margin: 0;
+
+    padding:
+        8px
+        12px
+        8px
+        0;
+
+    color: #292c30;
+
+    font-family: inherit;
+
+    font-size: 12px;
+
+    font-weight: 500;
+
+    line-height: 1.5;
+
+    background: transparent;
+
+    border: none;
+
+    outline: none;
+
+    resize: none;
+
+    overflow-y: auto;
+}
+
+
+.textarea-wrapper textarea::placeholder {
+
+    color: #b4b7bb;
+
+    font-weight: 400;
+}
+
+
+/* =====================================================
+   ERROR
+===================================================== */
+
+.form-error {
+
+    display: none;
+
+    margin-top: 6px;
+
+    padding-left: 3px;
+
+    color: #e54832;
+
+    font-size: 10px;
+
+    font-weight: 500;
+}
+
+
+.form-group.has-error .form-error {
+
+    display: block;
+}
+
+
+/* обычные input */
+
+.form-group.has-error .input-wrapper {
+
+    border-color: #ff8f7d;
+
+    background: #fff8f6;
+}
+
+
+/* =====================================================
+   IMAGE UPLOAD
+===================================================== */
+
+.image-upload {
+
+    position: relative;
+}
+
+
+.image-upload input {
+
+    display: none;
+}
+
+
+.image-upload-label {
+
+    min-height: 90px;
+
+    display: flex;
+
+    align-items: center;
+
+    box-sizing: border-box;
+
+    padding: 14px;
+
+    background: #fafafa;
+
+    border:
+        1.5px dashed
+        #dedfe1;
+
+    border-radius: 16px;
+
+    cursor: pointer;
+
+    transition:
+        background .2s ease,
+        border-color .2s ease;
+}
+
+
+.image-upload-label:hover {
+
+    background: #fff9f7;
+
+    border-color: #ffab98;
+}
+
+
+/* =====================================================
+   UPLOAD ICON
+===================================================== */
+
+.upload-icon {
+
+    width: 48px;
+
+    height: 48px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    margin-right: 13px;
+
+    color: #ff5a36;
+
+    background: #fff0eb;
+
+    border-radius: 13px;
+
+    font-size: 19px;
+}
+
+
+/* =====================================================
+   UPLOAD TEXT
+===================================================== */
+
+.upload-text {
+
+    min-width: 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 4px;
+}
+
+
+.upload-text strong {
+
+    color: #34373b;
+
+    font-size: 12px;
+
+    font-weight: 700;
+}
+
+
+.upload-text span {
+
+    color: #a5a8ad;
+
+    font-size: 10px;
+
+    font-weight: 400;
+}
+
+
+/* =====================================================
+   UPLOAD PLUS
+===================================================== */
+
+.upload-plus {
+
+    margin-left: auto;
+
+    flex-shrink: 0;
+
+    color: #a7aaae;
+
+    font-size: 14px;
+}
+
+
+/* =====================================================
+   IMAGE PREVIEW
+===================================================== */
+
+.image-preview {
+
+    display: none;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 8px;
+
+    margin-top: 10px;
+}
+
+
+.image-preview.active {
+
+    display: grid;
+}
+
+
+/* =====================================================
+   PREVIEW ITEM
+===================================================== */
+
+.preview-item {
+
+    position: relative;
+
+    aspect-ratio: 1 / 1;
+
+    overflow: hidden;
+
+    background: #f4f4f5;
+
+    border-radius: 12px;
+}
+
+
+.preview-item img {
+
+    width: 100%;
+
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+}
+
+
+/* =====================================================
+   REMOVE IMAGE
+===================================================== */
+
+.preview-remove {
+
+    position: absolute;
+
+    top: 5px;
+
+    right: 5px;
+
+    width: 25px;
+
+    height: 25px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    color: #ffffff;
+
+    background:
+        rgba(25, 25, 25, .72);
+
+    border: none;
+
+    border-radius: 50%;
+
+    cursor: pointer;
+
+    font-size: 10px;
+
+    backdrop-filter: blur(5px);
+
+    transition:
+        background .2s ease;
+}
+
+
+.preview-remove:hover {
+
+    background: #ff5a36;
+}
+
+
+/* =====================================================
+   SUBMIT BUTTON
+===================================================== */
+
+.create-ad-submit {
+
+    width: 100%;
+
+    height: 54px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding:
+        0
+        17px
+        0
+        20px;
+
+    color: #ffffff;
+
+    background: #ff5a36;
+
+    border: none;
+
+    border-radius: 15px;
+
+    font-family: inherit;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 20px
+        rgba(255, 90, 54, .20);
+
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease,
+        background .2s ease;
+}
+
+
+.create-ad-submit span {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    font-size: 13px;
+
+    font-weight: 700;
+}
+
+
+.create-ad-submit > i {
+
+    width: 31px;
+
+    height: 31px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background:
+        rgba(255,255,255,.16);
+
+    border-radius: 9px;
+
+    font-size: 11px;
+
+    transition:
+        transform .2s ease;
+}
+
+
+.create-ad-submit:hover {
+
+    background: #f4512f;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 12px 25px
+        rgba(255, 90, 54, .25);
+}
+
+
+.create-ad-submit:hover > i {
+
+    transform:
+        translateX(3px);
+}
+
+
+.create-ad-submit:active {
+
+    transform: translateY(0);
+}
+
+
+/* =====================================================
+   CUSTOM CITY SELECT
+===================================================== */
+
+.custom-city-select {
+
+    position: relative;
+
+    width: 100%;
+}
+
+
+/* =====================================================
+   CITY BUTTON
+===================================================== */
+
+.city-select-button {
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    width: 100%;
+
+    height: 52px;
+
+    padding:
+        0
+        14px;
+
+    box-sizing: border-box;
+
+    color: #555;
+
+    background: #f8f8f9;
+
+    border:
+        1px solid
+        #eeeeef;
+
+    border-radius: 14px;
+
+    font-family: inherit;
+
+    cursor: pointer;
+
+    transition:
+        border-color .2s ease,
+        background .2s ease,
+        box-shadow .2s ease;
+}
+
+
+.city-select-button:hover {
+
+    background: #f5f5f6;
+}
+
+
+/* ACTIVE */
+
+.custom-city-select.active
+.city-select-button {
+
+    background: #ffffff;
+
+    border-color: #ffb6a5;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(255, 90, 54, .08);
+}
+
+
+/* =====================================================
+   CITY ICON
+===================================================== */
+
+.city-select-icon {
+
+    width: 34px;
+
+    flex-shrink: 0;
+
+    color: #a2a5aa;
+
+    font-size: 14px;
+
+    transition:
+        color .2s ease;
+}
+
+
+.custom-city-select.active
+.city-select-icon {
+
+    color: #ff5a36;
+}
+
+
+/* =====================================================
+   CITY TEXT
+===================================================== */
+
+.city-selected-text {
+
+    flex: 1;
+
+    min-width: 0;
+
+    overflow: hidden;
+
+    text-align: left;
+
+    white-space: nowrap;
+
+    text-overflow: ellipsis;
+
+    color: #555;
+
+    font-size: 13px;
+
+    font-weight: 500;
+}
+
+
+.city-selected-text.placeholder {
+
+    color: #b4b7bb;
+
+    font-weight: 400;
+}
+
+
+/* =====================================================
+   CITY ARROW
+===================================================== */
+
+.city-select-arrow {
+
+    flex-shrink: 0;
+
+    margin-left: 8px;
+
+    color: #a2a5aa;
+
+    font-size: 9px;
+
+    transition:
+        transform .25s ease;
+}
+
+
+.custom-city-select.active
+.city-select-arrow {
+
+    transform:
+        rotate(180deg);
+}
+
+
+/* =====================================================
+   CITY OPTIONS
+===================================================== */
+
+.city-options {
+
+    position: absolute;
+
+    top: calc(100% + 8px);
+
+    left: 0;
+
+    z-index: 1000;
+
+    width: 100%;
+
+    padding: 6px;
+
+    box-sizing: border-box;
+
+    background: #ffffff;
+
+    border:
+        1px solid
+        #eeeeef;
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 15px 40px
+        rgba(0, 0, 0, .10);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform:
+        translateY(-8px)
+        scale(.98);
+
+    transform-origin: top;
+
+    transition:
+        opacity .2s ease,
+        visibility .2s ease,
+        transform .2s ease;
+
+    max-height: 250px;
+
+    overflow-y: auto;
+}
+
+
+.custom-city-select.active
+.city-options {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    transform:
+        translateY(0)
+        scale(1);
+}
+
+
+/* =====================================================
+   CITY OPTION
+===================================================== */
+
+.city-option {
+
+    display: flex;
+
+    align-items: center;
+
+    min-height: 42px;
+
+    padding:
+        0
+        12px;
+
+    box-sizing: border-box;
+
+    color: #444;
+
+    border-radius: 10px;
+
+    font-size: 12px;
+
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition:
+        background .15s ease,
+        color .15s ease;
+}
+
+
+.city-option:hover {
+
+    color: #ff5a36;
+
+    background: #fff1ed;
+}
+
+
+.city-option.selected {
+
+    color: #ff5a36;
+
+    background: #fff1ed;
+
+    font-weight: 700;
+}
+
+
+/* =====================================================
+   CITY SELECT ERROR
+===================================================== */
+
+.form-group.has-error
+.custom-city-select
+.city-select-button {
+
+    background: #fff8f6;
+
+    border-color: #ff8f7d;
+}
+
+
+/* =====================================================
+   CITY SCROLLBAR
+===================================================== */
+
+.city-options::-webkit-scrollbar {
+
+    width: 5px;
+}
+
+
+.city-options::-webkit-scrollbar-track {
+
+    background: transparent;
+}
+
+
+.city-options::-webkit-scrollbar-thumb {
+
+    background: #ddd;
+
+    border-radius: 10px;
+}
+
+
+/* =====================================================
+   DESKTOP / TABLET
+===================================================== */
+
+@media (min-width: 651px) {
+
+    .form-row {
+
+        grid-template-columns:
+            minmax(0, 7fr)
+            minmax(0, 3fr);
+
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 650px) {
+
+    .create-ad-page {
+
+        padding:
+            20px
+            12px
+            90px;
+    }
+
+
+    .create-ad-form {
+
+        padding:
+            18px
+            12px;
+
+        border-radius: 20px;
+    }
+
+    .form-group label{
+        color: #ff5a36;
+        font-size:13px;
+    }
+
+    /* =============================================
+       IMPORTANT:
+       TWO COLUMNS REMAIN ON MOBILE
+       70% / 30%
+    ============================================= */
+
+    .form-row {
+
+        display: grid;
+
+        grid-template-columns:
+            minmax(0, 7fr)
+            minmax(0, 3fr);
+
+        gap: 8px;
+
+        width: 100%;
+    }
+
+
+    .form-row .form-group {
+
+        width: 100%;
+
+        min-width: 0;
+
+        margin-bottom: 17px;
+    }
+
+
+    /* INPUT */
+
+    .input-wrapper {
+
+        height: 50px;
+    }
+
+
+    .input-wrapper > i:first-child {
+
+        width: 34px;
+
+        font-size: 14px;
+    }
+
+
+    .input-wrapper input {
+
+        min-width: 0;
+
+        padding-right: 7px;
+
+        font-size: 14x;
+    }
+
+
+    .input-wrapper input::placeholder {
+
+        font-size: 12px;
+    }
+
+
+    /* TEXTAREA */
+
+    .textarea-wrapper {
+
+        height: 100px;
+    }
+
+
+    .textarea-wrapper > i:first-child {
+
+        width: 34px;
+
+        height: 100px;
+    }
+
+
+    .textarea-wrapper textarea {
+
+        font-size: 13px;
+    }
+
+
+    /* CITY */
+
+    .city-select-button {
+
+        height: 50px;
+
+        padding:
+            0
+            7px;
+    }
+
+
+    .city-select-icon {
+
+        width: 27px;
+
+        font-size: 14px;
+    }
+
+
+    .city-selected-text {
+
+        font-size: 12px;
+    }
+
+
+    .city-select-arrow {
+
+        margin-left: 3px;
+
+        font-size: 7px;
+    }
+
+
+    .city-options {
+
+        top: calc(100% + 6px);
+
+        padding: 5px;
+
+        max-height: 220px;
+
+        border-radius: 13px;
+    }
+
+
+    .city-option {
+
+        min-height: 37px;
+
+        padding:
+            0
+            9px;
+
+        font-size: 10px;
+
+        border-radius: 8px;
+    }
+
+
+    /* IMAGE PREVIEW */
+
+    .image-preview {
+
+        grid-template-columns:
+            repeat(3, 1fr);
+    }
+
+
+    .upload-text span {
+
+        max-width: 190px;
+    }
+
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 400px) {
+
+    .create-ad-page {
+
+        padding-left: 10px;
+
+        padding-right: 10px;
+    }
+
+
+    .create-ad-form {
+
+        padding-left: 10px;
+
+        padding-right: 10px;
+    }
+
+
+    .form-row {
+
+        gap: 6px;
+    }
+
+
+    .input-wrapper > i:first-child {
+
+        width: 32px;
+    }
+
+
+    .input-wrapper input {
+
+        font-size: 13px;
+    }
+
+
+    .input-wrapper input::placeholder {
+
+        font-size: 12px;
+    }
+
+
+    .city-select-button {
+
+        padding-left: 5px;
+
+        padding-right: 5px;
+    }
+
+
+    .city-select-icon {
+
+        width: 24px;
+
+        font-size: 12px;
+    }
+
+
+    .city-selected-text {
+
+        font-size: 12px;
+    }
+
+
+    .city-select-arrow {
+
+        font-size: 8px;
+    }
+
+
+    .image-preview {
+
+        grid-template-columns:
+            repeat(3, 1fr);
+    }
+
+
+    .upload-text span {
+
+        font-size: 12px;
+    }
+
+}
