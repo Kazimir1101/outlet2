@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="az">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Outlet</title>
+
+
+    <!-- Google Fonts -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+
+    <!-- Font Awesome -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+
+    <!-- CSS -->
+
+    <link rel="stylesheet"
+          href="/home/style.css">
+
+    <link rel="stylesheet"
+          href="/newad/newad.css">
+
+</head>
+
+
+<body>
+
+
+<div class="main-container">
+
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <header class="header">
+
+        <div class="logo">
+            <span>outlet</span>
+        </div>
+
+
+        <button
+            class="header-menu"
+            type="button">
+
+            <i class="fa-solid fa-bars"></i>
+
+        </button>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         CREATE AD PAGE
+    ====================================================== -->
+
+    <div class="create-ad-page">
+
+        <div class="create-ad-container">
+
+
+            <!-- FORM -->
+
+            <form
+                class="create-ad-form"
+                id="createAdForm">
+
+
+                <!-- =================================================
+                     DÜKANIN ADI
+                ================================================== -->
+
+                <div class="form-group">
+
+                    <label for="shopName">
+                        Dükanın adı
+                    </label>
+
+
+                    <div class="input-wrapper">
+
+                        <i class="fa-solid fa-shop"></i>
+
+
+                        <input
+                            type="text"
+                            id="shopName"
+                            name="shopName"
+                            maxlength="20"
+                            placeholder="Dükanın adını daxil edin"
+                            autocomplete="off">
+
+                    </div>
+
+
+                    <small class="form-error"></small>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     MƏHSUL + MİQDAR
+                ================================================== -->
+
+                <div class="form-row">
+
+
+                    <!-- MƏHSULUN ADI -->
+
+                    <div class="form-group">
+
+                        <label for="productName">
+                            Məhsulun adı
+                        </label>
+
+
+                        <div class="input-wrapper">
+
+                            <i class="fa-solid fa-tag"></i>
+
+
+                            <input
+                                type="text"
+                                id="productName"
+                                name="productName"
+                                maxlength="30"
+                                placeholder="Məhsulun adı"
+                                autocomplete="off">
+
+                        </div>
+
+
+                        <small class="form-error"></small>
+
+                    </div>
+
+
+
+                    <!-- MİQDAR -->
+
+                    <div class="form-group">
+
+                        <label for="quantity">
+                            Miqdar
+                        </label>
+
+
+                        <div class="input-wrapper">
+
+                            <i class="fa-solid fa-box"></i>
+
+
+                            <input
+                                type="number"
+                                id="quantity"
+                                name="quantity"
+                                min="1"
+                                placeholder="Məsələn: 3">
+
+                        </div>
+
+
+                        <small class="form-error"></small>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- =================================================
+                     ƏTRAFLI MƏLUMAT
+                ================================================== -->
+
+                <div class="form-group">
+
+                    <label for="productFullInfo">
+                        Ətraflı məlumat
+                    </label>
+
+
+                    <div class="input-wrapper textarea-wrapper">
+
+                        <i class="fa-solid fa-file-lines"></i>
+
+
+                        <textarea
+                            id="productFullInfo"
+                            name="productFullInfo"
+                            placeholder="Məhsul haqda ətraflı məlumat"
+                            maxlength="150"
+                            autocomplete="off"></textarea>
+
+                    </div>
+
+
+                    <small class="form-error"></small>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     ƏLAQƏ + ŞƏHƏR
+                ================================================== -->
+
+                <div class="form-row">
+
+
+                    <!-- ƏLAQƏ NÖMRƏSİ -->
+
+                    <div class="form-group">
+
+                        <label for="phone">
+                            Əlaqə nömrəsi
+                        </label>
+
+
+                        <div class="input-wrapper">
+
+                            <i class="fa-solid fa-phone"></i>
+
+
+                            <input
+                                type="tel"
+                                id="phone"
+                                name="phone"
+                                placeholder="050 123 45 67"
+                                autocomplete="tel">
+
+                        </div>
+
+
+                        <small class="form-error"></small>
+
+                    </div>
+
+
+
+                    <!-- ŞƏHƏR -->
+
+                    <div class="form-group">
+
+                        <label for="city">
+                            Şəhər
+                        </label>
+
+
+                        <div class="custom-city-select">
+
+
+                            <!-- SELECT BUTTON -->
+
+                            <button
+                                type="button"
+                                class="city-select-button">
+
+
+                                <i
+                                    class="fa-solid fa-location-dot city-select-icon">
+                                </i>
+
+
+                                <span class="city-selected-text placeholder">
+                                    Şəhər
+                                </span>
+
+
+                                <i
+                                    class="fa-solid fa-chevron-down city-select-arrow">
+                                </i>
+
+                            </button>
+
+
+
+                            <!-- CITY OPTIONS -->
+
+                            <div class="city-options">
+
+
+                                <div
+                                    class="city-option"
+                                    data-value="Bakı">
+
+                                    Bakı
+
+                                </div>
+
+
+                                <div
+                                    class="city-option"
+                                    data-value="Sumqayıt">
+
+                                    Sumqayıt
+
+                                </div>
+
+
+                                <div
+                                    class="city-option"
+                                    data-value="Gəncə">
+
+                                    Gəncə
+
+                                </div>
+
+
+                                <div
+                                    class="city-option"
+                                    data-value="Quba">
+
+                                    Quba
+
+                                </div>
+
+
+                                <div
+                                    class="city-option"
+                                    data-value="Qusar">
+
+                                    Qusar
+
+                                </div>
+
+
+                                <div
+                                    class="city-option"
+                                    data-value="Xaçmaz">
+
+                                    Xaçmaz
+
+                                </div>
+
+
+                                <div
+                                    class="city-option"
+                                    data-value="Şabran">
+
+                                    Şabran
+
+                                </div>
+
+
+                                <div
+                                    class="city-option"
+                                    data-value="Siyəzən">
+
+                                    Siyəzən
+
+                                </div>
+
+
+                            </div>
+
+                        </div>
+
+
+                        <!--
+                            Hidden field.
+                            Backend-ə city olaraq göndəriləcək.
+                        -->
+
+                        <input
+                            type="hidden"
+                            id="city"
+                            name="city">
+
+
+                        <small class="form-error"></small>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- =================================================
+                     ÜNVAN
+                ================================================== -->
+
+                <div class="form-group">
+
+                    <label for="address">
+                        Ünvan
+                    </label>
+
+
+                    <div class="input-wrapper">
+
+                        <i class="fa-light fa-map-pin"></i>
+
+
+                        <input
+                            type="text"
+                            id="address"
+                            name="address"
+                            maxlength="20"
+                            placeholder="Dükanın ünvanını daxil edin"
+                            autocomplete="street-address">
+
+                    </div>
+
+
+                    <small class="form-error"></small>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     ŞƏKİL
+                ================================================== -->
+
+                <div class="form-group">
+
+                    <label>
+                        Şəkil seçin
+                    </label>
+
+
+                    <div class="image-upload">
+
+                        <input
+                            type="file"
+                            id="productImages"
+                            name="productImages"
+                            accept="image/*"
+                            multiple>
+
+
+                        <label
+                            for="productImages"
+                            class="image-upload-label">
+
+
+                            <div class="upload-icon">
+
+                                <i class="fa-regular fa-image"></i>
+
+                            </div>
+
+
+                            <div class="upload-text">
+
+                                <strong>
+                                    Şəkil seçin
+                                </strong>
+
+                                <span>
+                                    Məhsulun şəkillərini əlavə edin
+                                </span>
+
+                            </div>
+
+
+                            <i
+                                class="fa-solid fa-plus upload-plus">
+                            </i>
+
+
+                        </label>
+
+                    </div>
+
+
+
+                    <!-- PREVIEW -->
+
+                    <div class="image-preview"></div>
+
+
+                    <small class="form-error"></small>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     SUBMIT
+                ================================================== -->
+
+                <button
+                    type="submit"
+                    class="create-ad-submit">
+
+
+                    <span>
+
+                        <i class="fa-solid fa-plus"></i>
+
+                        Əlavə et
+
+                    </span>
+
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </button>
+
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     MENU MODAL
+====================================================== -->
+
+<div class="menu-modal">
+
+    <div class="menu-modal-overlay"></div>
+
+
+    <div class="menu-modal-content">
+
+
+        <!-- HEADER -->
+
+        <div class="menu-modal-header">
+
+            <a
+                href="#"
+                class="menu-modal-logo">
+
+                Outlet
+
+            </a>
+
+
+            <button
+                class="menu-modal-close"
+                type="button">
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+        </div>
+
+
+
+        <!-- LINKS -->
+
+        <div class="menu-modal-links">
+
+
+            <a
+                href="#"
+                class="menu-modal-link">
+
+                <i class="fa-solid fa-house"></i>
+
+                <span>
+                    Əsas səhifə
+                </span>
+
+                <i
+                    class="fa-solid fa-chevron-right menu-link-arrow">
+                </i>
+
+            </a>
+
+
+
+            <a
+                href="#"
+                class="menu-modal-link">
+
+                <i class="fa-solid fa-circle-info"></i>
+
+                <span>
+                    Haqqımızda
+                </span>
+
+                <i
+                    class="fa-solid fa-chevron-right menu-link-arrow">
+                </i>
+
+            </a>
+
+
+        </div>
+
+
+
+        <!-- ADD AD -->
+
+        <div class="menu-modal-bottom">
+
+            <button
+                class="menu-add-ad"
+                type="button">
+
+                <span>
+                    Elan yerləşdir
+                </span>
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </button>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+====================================================== -->
+
+<script
+    src="https://code.jquery.com/jquery-3.7.1.min.js">
+</script>
+
+<script src="/home/app.js"></script>
+
+<script src="/newad/newad.js"></script>
+
+
+</body>
+
+</html>
