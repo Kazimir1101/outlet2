@@ -756,7 +756,7 @@
 
     flex-shrink: 0;
 
-    color: #a2a5aa;
+    color: #ff5a36;
 
     font-size: 14px;
 
@@ -1092,13 +1092,9 @@
 
     background: transparent;
 
-    color: #292c30;
-
     font-family: inherit;
 
     font-size: 13px;
-
-    font-weight: 500;
 }
 
 
@@ -1113,9 +1109,9 @@
 
     right: 10px;
 
-    color: #999da2;
+    color: #ff5a36;
 
-    font-size: 13px;
+    font-size: 18px;
 
     font-weight: 700;
 
@@ -1157,8 +1153,7 @@
     color: #777b81;
 
     font-family: inherit;
-    font-size: 10px;
-    font-weight: 500;
+    font-size: 13px;
 
     cursor: pointer;
 
@@ -1195,9 +1190,9 @@
 
     margin-right: 8px;
 
-    color: #a0a3a8;
+    color: #ff5a36;
 
-    font-size: 11px;
+    font-size: 12px;
 
     transition: color .2s ease;
 }
@@ -1328,7 +1323,7 @@
 
     color: #55595e;
 
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 500;
 
     cursor: pointer;
@@ -1628,7 +1623,7 @@
         padding-left: 9px;
         padding-right: 25px;
 
-        font-size: 12px;
+        font-size: 13px;
     }
 
 
@@ -1655,14 +1650,14 @@
 
         border-radius: 13px;
 
-        font-size: 8px;
+        font-size: 13px;
     }
 
     .duration-select-icon {
 
         margin-right: 6px;
 
-        font-size: 9px;
+        font-size: 12px;
     }
 
     .duration-select-arrow {
@@ -1691,7 +1686,7 @@
 
         border-radius: 8px;
 
-        font-size: 9px;
+        font-size: 12px;
     }
 
 }
@@ -1803,7 +1798,7 @@
         padding-left: 7px;
         padding-right: 20px;
 
-        font-size: 8px;
+        font-size: 13px;
     }
 
 
@@ -1811,7 +1806,7 @@
 
         right: 6px;
 
-        font-size: 7px;
+        font-size: 18px;
     }
 
 }
