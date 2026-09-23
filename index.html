@@ -92,10 +92,7 @@
 
                 <div class="form-group">
 
-        
-
-
-                    <div class="input-wrapper">
+                     <div class="input-wrapper">
 
                         <i class="fa-solid fa-shop"></i>
 
@@ -105,7 +102,7 @@
                             id="shopName"
                             name="shopName"
                             maxlength="20"
-                            placeholder="Dükanın adını daxil edin"
+                            placeholder="Dükanın adı"
                             autocomplete="off">
 
                     </div>
@@ -127,9 +124,6 @@
                     <!-- MƏHSULUN ADI -->
 
                     <div class="form-group">
-
-            
-
 
                         <div class="input-wrapper">
 
@@ -157,10 +151,7 @@
 
                     <div class="form-group">
 
-              
-
-
-                        <div class="input-wrapper">
+                         <div class="input-wrapper">
 
                             <i class="fa-solid fa-box"></i>
 
@@ -170,7 +161,7 @@
                                 id="quantity"
                                 name="quantity"
                                 min="1"
-                                placeholder="Məsələn: 3">
+                                placeholder="Miqdar">
 
                         </div>
 
@@ -189,9 +180,6 @@
                 ================================================== -->
 
                 <div class="form-group">
-
-      
-
 
                     <div class="input-wrapper textarea-wrapper">
 
@@ -212,6 +200,108 @@
 
                 </div>
 
+                <!-- =================================================
+                QİYMƏT + ELAN MÜDDƏTİ
+            ================================================== -->
+
+            <div class="form-group price-duration-group">
+
+                <div class="price-duration-row">
+
+                    <!-- ƏVVƏLKİ QİYMƏT -->
+
+                    <div class="compact-price-field">
+
+                        <div class="compact-price-input">
+
+                            <input
+                                type="number"
+                                id="oldPrice"
+                                name="oldPrice"
+                                min="0"
+                                step="0.01"
+                                placeholder="Əvvəlki qiymət"
+                                autocomplete="off">
+
+                            <span>₼</span>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- ENDİRİMLİ QİYMƏT -->
+
+                    <div class="compact-price-field">
+
+                        <div class="compact-price-input discount-price">
+
+                            <input
+                                type="number"
+                                id="newPrice"
+                                name="newPrice"
+                                min="0"
+                                step="0.01"
+                                placeholder="Endirimli qiymət"
+                                autocomplete="off">
+
+                            <span>₼</span>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- ELANIN MÜDDƏTİ -->
+
+                    <div class="compact-duration-field">
+
+                        <div class="custom-duration-select">
+
+                            <button
+                                type="button"
+                                class="duration-select-button">
+
+                                <i class="fa-solid fa-clock duration-select-icon"></i>
+
+                                <span class="duration-selected-text placeholder">
+                                    Elan müddəti
+                                </span>
+
+                                <i class="fa-solid fa-chevron-down duration-select-arrow"></i>
+
+                            </button>
+
+                            <div class="duration-options">
+
+                                <div class="duration-option" data-value="1">1 gün</div>
+                                <div class="duration-option" data-value="2">2 gün</div>
+                                <div class="duration-option" data-value="3">3 gün</div>
+                                <div class="duration-option" data-value="4">4 gün</div>
+                                <div class="duration-option" data-value="5">5 gün</div>
+                                <div class="duration-option" data-value="6">6 gün</div>
+                                <div class="duration-option" data-value="7">7 gün</div>
+                                <div class="duration-option" data-value="10">10 gün</div>
+                                <div class="duration-option" data-value="14">14 gün</div>
+                                <div class="duration-option" data-value="30">30 gün</div>
+
+                            </div>
+
+                        </div>
+
+                        <!-- Backend-ə göndəriləcək real value -->
+                        <input
+                            type="hidden"
+                            id="deleteAfter"
+                            name="deleteAfter">
+
+                    </div>
+
+                </div>
+
+                <small class="form-error"></small>
+
+            </div>
 
 
                 <!-- =================================================
@@ -225,9 +315,6 @@
 
                     <div class="form-group">
 
-         
-
-
                         <div class="input-wrapper">
 
                             <i class="fa-solid fa-phone"></i>
@@ -237,7 +324,7 @@
                                 type="tel"
                                 id="phone"
                                 name="phone"
-                                placeholder="050 123 45 67"
+                                placeholder="Əlaqə nömrəsi"
                                 autocomplete="tel">
 
                         </div>
@@ -252,8 +339,6 @@
                     <!-- ŞƏHƏR -->
 
                     <div class="form-group">
-
-
 
                         <div class="custom-city-select">
 
@@ -306,9 +391,6 @@
                                 </div>
 
 
-                     
-
-
                                 <div
                                     class="city-option"
                                     data-value="Quba">
@@ -334,11 +416,6 @@
                                     Xaçmaz
 
                                 </div>
-
-
-                   
-
-
 
                             </div>
 
@@ -371,12 +448,9 @@
 
                 <div class="form-group">
 
-      
-
-
                     <div class="input-wrapper">
 
-                        <i class="fa-light fa-map-pin"></i>
+                        <i class="fa-solid fa-map-pin"></i>
 
 
                         <input
@@ -384,7 +458,7 @@
                             id="address"
                             name="address"
                             maxlength="20"
-                            placeholder="Dükanın ünvanını daxil edin"
+                            placeholder="Ünvan"
                             autocomplete="street-address">
 
                     </div>
@@ -401,8 +475,6 @@
                 ================================================== -->
 
                 <div class="form-group">
-
-
 
                     <div class="image-upload">
 
@@ -429,11 +501,11 @@
                             <div class="upload-text">
 
                                 <strong>
-                                    Şəkil seçin
+                                    Məhsulun şəkillərini seçin 
                                 </strong>
 
                                 <span>
-                                    Məhsulun şəkillərini əlavə edin
+                                    Maksimum 5 şəkil əlavə edin
                                 </span>
 
                             </div>
@@ -464,24 +536,30 @@
                 <!-- =================================================
                      SUBMIT
                 ================================================== -->
+                <div class="footer-btns-block" style="display: flex; flex-direction: row;justify-content: space-between; align-items: center;">
+                    
+                    <button
+                        type="button"
+                        class="create-ad-submit back-to-main-button" style="width:48%">
 
-                <button
-                    type="submit"
-                    class="create-ad-submit">
+                        <span style="width:56%; display: flex; justify-content: space-between;">
+                            <i class="fa-solid fa-arrow-left"></i>
+                            Geri
+                        </span>
+                    </button>
+                
+                    <button
+                        type="submit"
+                        class="create-ad-submit" style="width:48%; justify-content: flex-end;">
 
+                        <span style="display: flex; justify-content: space-between;">
+                            Əlavə et
+                            <i class="fa-solid fa-arrow-right" style="font-size:13px;"></i>
+                        </span>
 
-                    <span>
+                    </button>
 
-                        <i class="fa-solid fa-plus"></i>
-
-                        Əlavə et
-
-                    </span>
-
-
-                    <i class="fa-solid fa-arrow-right"></i>
-
-                </button>
+                </div>
 
 
             </form>
@@ -537,7 +615,7 @@
 
 
             <a
-                href="#"
+                href="/home/index.html"
                 class="menu-modal-link">
 
                 <i class="fa-solid fa-house"></i>
@@ -555,7 +633,7 @@
 
 
             <a
-                href="#"
+                href="/about/about.html"
                 class="menu-modal-link">
 
                 <i class="fa-solid fa-circle-info"></i>
@@ -609,7 +687,6 @@
 </script>
 
 <script src="app.js"></script>
-
 
 
 </body>
