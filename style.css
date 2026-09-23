@@ -1801,6 +1801,10 @@
         font-size: 13px;
     }
 
+    .compact-price-input input::placeholder {
+        font-size: 12px;
+    }
+
 
     .compact-price-input span {
 
