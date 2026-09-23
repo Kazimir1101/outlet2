@@ -298,11 +298,12 @@ $(document).ready(function () {
 
 
     /*
-     * OPEN / CLOSE
+     * OPEN / CLOSE CITY
      */
 
-    $(".city-select-button").on(
+    $(document).on(
         "click",
+        ".city-select-button",
         function (e) {
 
             e.preventDefault();
@@ -318,7 +319,15 @@ $(document).ready(function () {
 
 
             /*
-             * Digər açıq dropdown-ları bağlayırıq.
+             * Duration dropdown-u bağlayırıq.
+             */
+
+            $(".custom-duration-select")
+                .removeClass("active");
+
+
+            /*
+             * Digər city dropdown-ları bağlayırıq.
              */
 
             $(".custom-city-select")
@@ -327,7 +336,7 @@ $(document).ready(function () {
 
 
             /*
-             * Cari dropdown.
+             * Cari dropdown-u açırıq / bağlayırıq.
              */
 
             select.toggleClass("active");
@@ -337,14 +346,16 @@ $(document).ready(function () {
 
 
 
-    /*
-     * SELECT CITY
-     */
+    /* =====================================================
+       SELECT CITY
+    ====================================================== */
 
     $(document).on(
         "click",
         ".city-option",
         function (e) {
+
+            e.preventDefault();
 
             e.stopPropagation();
 
@@ -382,16 +393,6 @@ $(document).ready(function () {
 
 
             /*
-             * Hidden input-a
-             * şəhər dəyərini yazırıq.
-             */
-
-            $("#city")
-                .val(value)
-                .trigger("change");
-
-
-            /*
              * Əvvəlki selected-i silirik.
              */
 
@@ -412,6 +413,14 @@ $(document).ready(function () {
 
 
             /*
+             * Hidden input-a şəhər dəyərini yazırıq.
+             */
+
+            $("#city")
+                .val(value);
+
+
+            /*
              * Dropdown bağlanır.
              */
 
@@ -424,34 +433,199 @@ $(document).ready(function () {
              * Validation error silinir.
              */
 
-            const group =
-                select.closest(
-                    ".form-group"
-                );
-
-
-            group.removeClass(
-                "has-error"
-            );
-
-
-            group.find(".form-error")
-                .text("");
+            clearFieldError("#city");
 
         }
     );
 
 
 
+    /* =====================================================
+       CUSTOM ELAN MÜDDƏTİ SELECT
+    ====================================================== */
+
+
     /*
-     * CLICK OUTSIDE
+     * OPEN / CLOSE DURATION
      */
 
     $(document).on(
         "click",
-        function () {
+        ".duration-select-button",
+        function (e) {
+
+            e.preventDefault();
+
+            e.stopPropagation();
+
+
+            const select =
+                $(this)
+                    .closest(
+                        ".custom-duration-select"
+                    );
+
+
+            if (!select.length) {
+
+                return;
+
+            }
+
+
+            /*
+             * City dropdown-u bağlayırıq.
+             */
 
             $(".custom-city-select")
+                .removeClass("active");
+
+
+            /*
+             * Digər duration dropdown-ları bağlayırıq.
+             */
+
+            $(".custom-duration-select")
+                .not(select)
+                .removeClass("active");
+
+
+            /*
+             * Cari dropdown-u açırıq / bağlayırıq.
+             */
+
+            select.toggleClass("active");
+
+        }
+    );
+
+
+
+    /* =====================================================
+       SELECT DURATION
+    ====================================================== */
+
+    $(document).on(
+        "click",
+        ".duration-option",
+        function (e) {
+
+            e.preventDefault();
+
+            e.stopPropagation();
+
+
+            const option =
+                $(this);
+
+
+            const value =
+                option.attr("data-value");
+
+
+            const text =
+                option.text().trim();
+
+
+            const select =
+                option.closest(
+                    ".custom-duration-select"
+                );
+
+
+            if (!select.length) {
+
+                return;
+
+            }
+
+
+            /*
+             * Görünən müddəti dəyişirik.
+             */
+
+            select
+                .find(
+                    ".duration-selected-text"
+                )
+                .text(text)
+                .removeClass(
+                    "placeholder"
+                );
+
+
+            /*
+             * Əvvəlki selected-ləri silirik.
+             */
+
+            select
+                .find(".duration-option")
+                .removeClass(
+                    "selected"
+                );
+
+
+            /*
+             * Cari variantı selected edirik.
+             */
+
+            option.addClass(
+                "selected"
+            );
+
+
+            /*
+             * Hidden input-a dəyəri yazırıq.
+             */
+
+            $("#deleteAfter")
+                .val(value);
+
+
+            /*
+             * Validation error silinir.
+             */
+
+            clearFieldError("#deleteAfter");
+
+
+            /*
+             * Dropdown bağlanır.
+             */
+
+            select.removeClass(
+                "active"
+            );
+
+        }
+    );
+
+
+
+    /* =====================================================
+       CLICK OUTSIDE
+    ====================================================== */
+
+    $(document).on(
+        "click",
+        function (e) {
+
+            if (
+                $(e.target).closest(
+                    ".custom-city-select, .custom-duration-select"
+                ).length
+            ) {
+
+                return;
+
+            }
+
+
+            $(".custom-city-select")
+                .removeClass("active");
+
+
+            $(".custom-duration-select")
                 .removeClass("active");
 
         }
@@ -459,9 +633,9 @@ $(document).ready(function () {
 
 
 
-    /*
-     * ESC
-     */
+    /* =====================================================
+       ESC
+    ====================================================== */
 
     $(document).on(
         "keydown",
@@ -470,6 +644,10 @@ $(document).ready(function () {
             if (e.key === "Escape") {
 
                 $(".custom-city-select")
+                    .removeClass("active");
+
+
+                $(".custom-duration-select")
                     .removeClass("active");
 
             }
@@ -491,6 +669,7 @@ $(document).ready(function () {
 
 
             let isValid = true;
+
 
 
             /* ---------------------------------------------
@@ -598,6 +777,101 @@ $(document).ready(function () {
                 showError(
                     "#quantity",
                     "Miqdarı düzgün daxil edin"
+                );
+
+
+                isValid = false;
+
+            }
+
+
+
+            /* =================================================
+               QİYMƏT
+            ================================================== */
+
+            const oldPrice =
+                $("#oldPrice")
+                    .val()
+                    .trim();
+
+
+            const newPrice =
+                $("#newPrice")
+                    .val()
+                    .trim();
+
+
+
+            if (
+                oldPrice === "" ||
+                Number(oldPrice) <= 0
+            ) {
+
+                showError(
+                    "#oldPrice",
+                    "Əvvəlki qiyməti daxil edin"
+                );
+
+
+                isValid = false;
+
+            }
+
+
+
+            if (
+                newPrice === "" ||
+                Number(newPrice) <= 0
+            ) {
+
+                showError(
+                    "#newPrice",
+                    "Endirimli qiyməti daxil edin"
+                );
+
+
+                isValid = false;
+
+            }
+
+
+
+            if (
+                oldPrice !== "" &&
+                newPrice !== "" &&
+                Number(oldPrice) > 0 &&
+                Number(newPrice) > 0 &&
+                Number(newPrice) >= Number(oldPrice)
+            ) {
+
+                showError(
+                    "#newPrice",
+                    "Endirimli qiymət əvvəlki qiymətdən aşağı olmalıdır"
+                );
+
+
+                isValid = false;
+
+            }
+
+
+
+            /* =================================================
+               ELAN MÜDDƏTİ
+            ================================================== */
+
+            const deleteAfter =
+                $("#deleteAfter")
+                    .val()
+                    .trim();
+
+
+            if (deleteAfter === "") {
+
+                showError(
+                    "#deleteAfter",
+                    "Elan müddətini seçin"
                 );
 
 
@@ -774,10 +1048,6 @@ $(document).ready(function () {
                 new FormData(this);
 
 
-            /*
-             * Şəkilləri ayrıca əlavə edirik.
-             */
-
             formData.delete(
                 "productImages"
             );
@@ -800,52 +1070,17 @@ $(document).ready(function () {
                DEBUG
             ================================================== */
 
-            console.log(
-                "Dükan:",
-                shopName
-            );
-
-
-            console.log(
-                "Məhsul:",
-                productName
-            );
-
-
-            console.log(
-                "Ətraflı:",
-                productFullInfo
-            );
-
-
-            console.log(
-                "Miqdar:",
-                quantity
-            );
-
-
-            console.log(
-                "Telefon:",
-                phone
-            );
-
-
-            console.log(
-                "Şəhər:",
-                city
-            );
-
-
-            console.log(
-                "Ünvan:",
-                address
-            );
-
-
-            console.log(
-                "Şəkillər:",
-                selectedFiles
-            );
+            console.log("Dükan:", shopName);
+            console.log("Məhsul:", productName);
+            console.log("Ətraflı:", productFullInfo);
+            console.log("Miqdar:", quantity);
+            console.log("Əvvəlki qiymət:", oldPrice);
+            console.log("Endirimli qiymət:", newPrice);
+            console.log("Elan müddəti:", deleteAfter);
+            console.log("Telefon:", phone);
+            console.log("Şəhər:", city);
+            console.log("Ünvan:", address);
+            console.log("Şəkillər:", selectedFiles);
 
 
 
@@ -908,10 +1143,38 @@ $(document).ready(function () {
             $(selector);
 
 
-        const group =
+        if (!input.length) {
+
+            return;
+
+        }
+
+
+        let group =
             input.closest(
                 ".form-group"
             );
+
+
+        if (
+            !group.length &&
+            selector === "#deleteAfter"
+        ) {
+
+            group =
+                input.closest(
+                    ".price-duration-group"
+                );
+
+        }
+
+
+        if (!group.length) {
+
+            group =
+                input.parent();
+
+        }
 
 
         group.addClass(
@@ -921,7 +1184,68 @@ $(document).ready(function () {
 
         group
             .find(".form-error")
+            .first()
             .text(message);
+
+    }
+
+
+
+    /* =====================================================
+       CLEAR FIELD ERROR
+    ====================================================== */
+
+    function clearFieldError(
+        selector
+    ) {
+
+        const input =
+            $(selector);
+
+
+        if (!input.length) {
+
+            return;
+
+        }
+
+
+        let group =
+            input.closest(
+                ".form-group"
+            );
+
+
+        if (
+            !group.length &&
+            selector === "#deleteAfter"
+        ) {
+
+            group =
+                input.closest(
+                    ".price-duration-group"
+                );
+
+        }
+
+
+        if (!group.length) {
+
+            group =
+                input.parent();
+
+        }
+
+
+        group.removeClass(
+            "has-error"
+        );
+
+
+        group
+            .find(".form-error")
+            .first()
+            .text("");
 
     }
 
@@ -936,11 +1260,34 @@ $(document).ready(function () {
         "input, textarea",
         function () {
 
-            const group =
-                $(this)
-                    .closest(
-                        ".form-group"
+            const element =
+                $(this);
+
+
+            let group =
+                element.closest(
+                    ".form-group"
+                );
+
+
+            if (
+                !group.length &&
+                element.is("#deleteAfter")
+            ) {
+
+                group =
+                    element.closest(
+                        ".price-duration-group"
                     );
+
+            }
+
+
+            if (!group.length) {
+
+                return;
+
+            }
 
 
             group.removeClass(
@@ -950,6 +1297,7 @@ $(document).ready(function () {
 
             group
                 .find(".form-error")
+                .first()
                 .text("");
 
         }
@@ -986,6 +1334,25 @@ $(document).ready(function () {
                     .text("");
 
             }
+
+        }
+    );
+
+
+
+    /* =====================================================
+       BACK TO MAIN
+    ====================================================== */
+
+    $(".back-to-main-button").on(
+        "click",
+        function (e) {
+
+            e.preventDefault();
+
+
+            window.location.href =
+                "/home/index.html";
 
         }
     );
