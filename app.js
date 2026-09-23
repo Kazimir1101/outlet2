@@ -306,6 +306,152 @@ $(document).ready(function () {
     });
 
 
+        /* =====================================================
+       PRICE INPUTS — YALNIZ RƏQƏM + NÖQTƏ
+       MAX 5 RƏQƏM (TAM HİSSƏ)
+    ====================================================== */
+
+    function formatPriceInput($input) {
+
+        let value =
+            $input.val();
+
+        /*
+         * Yalnız rəqəm və nöqtəyə icazə veririk.
+         * Vergülü avtomatik nöqtəyə çeviririk.
+         */
+
+        value =
+            value
+                .replace(/,/g, ".")
+                .replace(/[^0-9.]/g, "");
+
+
+        /*
+         * Yalnız bir nöqtə olsun.
+         */
+
+        const firstDot =
+            value.indexOf(".");
+
+        if (firstDot !== -1) {
+
+            value =
+                value.substring(0, firstDot + 1) +
+                value
+                    .substring(firstDot + 1)
+                    .replace(/\./g, "");
+
+        }
+
+
+        /*
+         * Tam hissə maksimum 5 rəqəm.
+         */
+
+        let parts =
+            value.split(".");
+
+        parts[0] =
+            parts[0]
+                .replace(/^0+(?=\d)/, "")
+                .substring(0, 5);
+
+
+        /*
+         * Onluq hissə maksimum 2 rəqəm.
+         */
+
+        if (parts.length > 1) {
+
+            parts[1] =
+                parts[1]
+                    .substring(0, 2);
+
+        }
+
+
+        /*
+         * Yenidən yığırıq.
+         */
+
+        value = parts.join(".");
+
+
+        $input.val(value);
+
+    }
+
+
+
+    /*
+     * Input — istifadəçi yazarkən
+     */
+
+    $("#oldPrice, #newPrice").on(
+        "input",
+        function () {
+
+            formatPriceInput($(this));
+
+        }
+    );
+
+
+
+    /*
+     * Keydown — qadağan olunmuş simvolları bloklayırıq
+     * (e, E, +, -, boşluq)
+     */
+
+    $("#oldPrice, #newPrice").on(
+        "keydown",
+        function (e) {
+
+            const forbiddenKeys = [
+                "e",
+                "E",
+                "+",
+                "-",
+                " "
+            ];
+
+            if (
+                forbiddenKeys.indexOf(e.key) !== -1
+            ) {
+
+                e.preventDefault();
+
+            }
+
+        }
+    );
+
+
+
+    /*
+     * Paste — yalnız rəqəm və nöqtə
+     */
+
+    $("#oldPrice, #newPrice").on(
+        "paste",
+        function (e) {
+
+            e.preventDefault();
+
+            const pasted =
+                (e.originalEvent || e)
+                    .clipboardData
+                    .getData("text");
+
+            $(this).val(pasted);
+
+            formatPriceInput($(this));
+
+        }
+    );
+
+
     /* =====================================================
        PRODUCT DESCRIPTION
     ====================================================== */
@@ -895,7 +1041,7 @@ $(document).ready(function () {
 
                 showError(
                     "#oldPrice",
-                    "Əvvəlki qiyməti daxil edin"
+                    "Köhnə qiyməti daxil edin"
                 );
 
 
@@ -912,7 +1058,7 @@ $(document).ready(function () {
 
                 showError(
                     "#newPrice",
-                    "Endirimli qiyməti daxil edin"
+                    "Yeni qiyməti daxil edin"
                 );
 
 
@@ -932,7 +1078,7 @@ $(document).ready(function () {
 
                 showError(
                     "#newPrice",
-                    "Endirimli qiymət əvvəlki qiymətdən aşağı olmalıdır"
+                    "Yeni qiymət köhnə qiymətdən aşağı olmalıdır"
                 );
 
 
