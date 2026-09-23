@@ -162,7 +162,7 @@
 
     flex-shrink: 0;
 
-    color: #a2a5aa;
+    color: #ff5a36;
 
     font-size: 14px;
 
@@ -291,7 +291,7 @@
 
     font-family: inherit;
 
-    font-size: 12px;
+    font-size: 13px;
 
     font-weight: 500;
 
@@ -342,8 +342,6 @@
     display: block;
 }
 
-
-/* обычные input */
 
 .form-group.has-error .input-wrapper {
 
@@ -659,40 +657,18 @@
 
     justify-content: center;
 
-    background:
-        rgba(255,255,255,.16);
-
-    border-radius: 9px;
-
     font-size: 11px;
 
     transition:
         transform .2s ease;
 }
 
-
-.create-ad-submit:hover {
-
-    background: #f4512f;
-
-    transform: translateY(-2px);
-
-    box-shadow:
-        0 12px 25px
-        rgba(255, 90, 54, .25);
-}
-
-
-.create-ad-submit:hover > i {
-
-    transform:
-        translateX(3px);
-}
-
-
 .create-ad-submit:active {
 
-    transform: translateY(0);
+    box-shadow:
+        0 12px 10px
+        rgba(7, 1, 0, 0.25);
+
 }
 
 
@@ -756,8 +732,6 @@
     background: #f5f5f6;
 }
 
-
-/* ACTIVE */
 
 .custom-city-select.active
 .city-select-button {
@@ -1014,6 +988,426 @@
     border-radius: 10px;
 }
 
+.footer-btns-block span {
+    width:60%; 
+}
+
+.back-to-main-button{
+    background-color: grey;
+}
+
+/* =========================================================
+   PRICE + ELAN MÜDDƏTİ
+========================================================= */
+
+.price-duration-group {
+    width: 100%;
+}
+
+
+.price-duration-group > label {
+    display: block;
+    margin-bottom: 8px;
+
+    color: #36393d;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   ÜÇ ELEMENT BİR SƏTİRDƏ
+========================================================= */
+
+.price-duration-row {
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(0, 1fr)
+        minmax(0, 1.15fr);
+
+    gap: 8px;
+
+    width: 100%;
+}
+
+
+/* =========================================================
+   QİYMƏT INPUT
+========================================================= */
+
+.compact-price-input {
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+    height: 52px;
+
+    box-sizing: border-box;
+
+    background: #f8f8f9;
+
+    border: 1px solid #eeeeef;
+
+    border-radius: 14px;
+
+    transition:
+        background .2s ease,
+        border-color .2s ease,
+        box-shadow .2s ease;
+}
+
+
+.compact-price-input:focus-within {
+
+    background: #ffffff;
+
+    border-color: #ffb6a5;
+
+    box-shadow:
+        0 0 0 3px rgba(255, 90, 54, .08);
+}
+
+
+.compact-price-input input {
+
+    width: 100%;
+    min-width: 0;
+
+    height: 100%;
+
+    box-sizing: border-box;
+
+    padding:
+        0 30px
+        0 12px;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+
+    color: #292c30;
+
+    font-family: inherit;
+
+    font-size: 13px;
+
+    font-weight: 500;
+}
+
+
+.compact-price-input input::placeholder {
+    color: #9b9ea3;
+}
+
+
+.compact-price-input span {
+
+    position: absolute;
+
+    right: 10px;
+
+    color: #999da2;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   CUSTOM ELAN MÜDDƏTİ SELECT
+   ВАЖНО: единый класс .active для открытия
+========================================================= */
+
+.custom-duration-select {
+    position: relative;
+    width: 100%;
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+.duration-select-button {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+    height: 52px;
+
+    padding: 0 32px 0 12px;
+
+    border: 1px solid #eeeeef;
+    border-radius: 14px;
+
+    background: #f8f8f9;
+
+    color: #777b81;
+
+    font-family: inherit;
+    font-size: 10px;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition:
+        background .2s ease,
+        border-color .2s ease,
+        box-shadow .2s ease;
+}
+
+
+.duration-select-button:hover {
+    background: #f5f5f6;
+}
+
+
+/* open — теперь .active */
+
+.custom-duration-select.active .duration-select-button {
+    background: #ffffff;
+
+    border-color: #ffb6a5;
+
+    box-shadow:
+        0 0 0 3px rgba(255, 90, 54, .08);
+}
+
+
+/* =========================
+   CLOCK ICON
+========================= */
+
+.duration-select-icon {
+    flex-shrink: 0;
+
+    margin-right: 8px;
+
+    color: #a0a3a8;
+
+    font-size: 11px;
+
+    transition: color .2s ease;
+}
+
+
+.custom-duration-select.active
+.duration-select-icon {
+
+    color: #ff5a36;
+}
+
+
+/* =========================
+   SELECTED TEXT
+========================= */
+
+.duration-selected-text {
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    color: #292c30;
+
+    transition: color .2s ease;
+}
+
+
+.duration-selected-text.placeholder {
+    color: #9b9ea3;
+}
+
+
+/* =========================
+   ARROW
+========================= */
+
+.duration-select-arrow {
+
+    position: absolute;
+
+    right: 11px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    color: #9da0a5;
+
+    font-size: 9px;
+
+    pointer-events: none;
+
+    transition:
+        transform .2s ease,
+        color .2s ease;
+}
+
+
+.custom-duration-select.active
+.duration-select-arrow {
+
+    transform:
+        translateY(-50%)
+        rotate(180deg);
+
+    color: #ff5a36;
+}
+
+
+/* =========================
+   OPTIONS CONTAINER
+========================= */
+
+.duration-options {
+
+    position: absolute;
+
+    left: 0;
+    right: 0;
+
+    top: calc(100% + 7px);
+
+    z-index: 1000;
+
+    display: none;
+
+    padding: 5px;
+
+    background: #ffffff;
+
+    border: 1px solid #eeeeef;
+
+    border-radius: 14px;
+
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, .10);
+
+    max-height: 230px;
+
+    overflow-y: auto;
+
+    animation: durationDropdown .16s ease;
+}
+
+
+.custom-duration-select.active
+.duration-options {
+
+    display: block;
+}
+
+
+/* =========================
+   OPTION
+========================= */
+
+.duration-option {
+
+    display: flex;
+
+    align-items: center;
+
+    min-height: 34px;
+
+    padding: 0 10px;
+
+    border-radius: 9px;
+
+    color: #55595e;
+
+    font-size: 10px;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition:
+        background .15s ease,
+        color .15s ease;
+}
+
+
+.duration-option:hover {
+
+    background: #fff2ee;
+
+    color: #ff5a36;
+}
+
+
+.duration-option.selected {
+
+    background: #fff0eb;
+
+    color: #ff5a36;
+
+    font-weight: 600;
+}
+
+
+/* =========================
+   SCROLLBAR
+========================= */
+
+.duration-options::-webkit-scrollbar {
+    width: 4px;
+}
+
+.duration-options::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.duration-options::-webkit-scrollbar-thumb {
+
+    background: #dddddf;
+
+    border-radius: 10px;
+}
+
+
+/* =========================
+   ANIMATION
+========================= */
+
+@keyframes durationDropdown {
+
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =========================
+   ERROR
+========================= */
+
+.price-duration-group.has-error
+.duration-select-button {
+
+    border-color: #ff8f7d;
+
+    background: #fff8f6;
+}
+
 
 /* =====================================================
    DESKTOP / TABLET
@@ -1061,12 +1455,6 @@
         font-size:13px;
     }
 
-    /* =============================================
-       IMPORTANT:
-       TWO COLUMNS REMAIN ON MOBILE
-       70% / 30%
-    ============================================= */
-
     .form-row {
 
         display: grid;
@@ -1091,8 +1479,6 @@
     }
 
 
-    /* INPUT */
-
     .input-wrapper {
 
         height: 50px;
@@ -1113,7 +1499,7 @@
 
         padding-right: 7px;
 
-        font-size: 14x;
+        font-size: 14px;
     }
 
 
@@ -1122,8 +1508,6 @@
         font-size: 12px;
     }
 
-
-    /* TEXTAREA */
 
     .textarea-wrapper {
 
@@ -1144,8 +1528,6 @@
         font-size: 13px;
     }
 
-
-    /* CITY */
 
     .city-select-button {
 
@@ -1199,13 +1581,11 @@
             0
             9px;
 
-        font-size: 10px;
+        font-size: 12px;
 
         border-radius: 8px;
     }
 
-
-    /* IMAGE PREVIEW */
 
     .image-preview {
 
@@ -1217,6 +1597,101 @@
     .upload-text span {
 
         max-width: 190px;
+    }
+
+    .footer-btns-block span{
+        width:70%;
+    }
+
+    .price-duration-row {
+
+        grid-template-columns:
+            minmax(0, 1fr)
+            minmax(0, 1fr)
+            minmax(0, 1.05fr);
+
+        gap: 8px;
+    }
+
+
+    .compact-price-input,
+    .compact-duration-select {
+
+        height: 50px;
+
+        border-radius: 13px;
+    }
+
+
+    .compact-price-input input {
+
+        padding-left: 9px;
+        padding-right: 25px;
+
+        font-size: 12px;
+    }
+
+
+    .compact-price-input span {
+
+        right: 8px;
+
+        font-size: 18px;
+        color:#ff5a36;
+    }
+
+
+    .price-duration-hint {
+
+        font-size: 8px;
+    }
+
+    .duration-select-button {
+
+        height: 50px;
+
+        padding-left: 9px;
+        padding-right: 25px;
+
+        border-radius: 13px;
+
+        font-size: 8px;
+    }
+
+    .duration-select-icon {
+
+        margin-right: 6px;
+
+        font-size: 9px;
+    }
+
+    .duration-select-arrow {
+
+        right: 8px;
+
+        font-size: 8px;
+    }
+
+    .duration-options {
+
+        top: calc(100% + 6px);
+
+        padding: 4px;
+
+        border-radius: 12px;
+
+        max-height: 210px;
+    }
+
+    .duration-option {
+
+        min-height: 32px;
+
+        padding: 0 8px;
+
+        border-radius: 8px;
+
+        font-size: 9px;
     }
 
 }
@@ -1306,6 +1781,37 @@
     .upload-text span {
 
         font-size: 12px;
+    }
+
+    .price-duration-row {
+
+        gap: 6px;
+    }
+
+
+    .compact-price-input,
+    .compact-duration-select {
+
+        height: 48px;
+
+        border-radius: 11px;
+    }
+
+
+    .compact-price-input input {
+
+        padding-left: 7px;
+        padding-right: 20px;
+
+        font-size: 8px;
+    }
+
+
+    .compact-price-input span {
+
+        right: 6px;
+
+        font-size: 7px;
     }
 
 }
