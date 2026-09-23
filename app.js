@@ -222,6 +222,89 @@ $(document).ready(function () {
     });
 
 
+    /* =====================================================
+       QUANTITY — MAX 3 RƏQƏM
+    ====================================================== */
+
+    $("#quantity").on("input", function () {
+
+        let value =
+            $(this)
+                .val()
+                .replace(/\D/g, "")
+                .substring(0, 3);
+
+        /*
+         * Əgər istifadəçi 0 ilə başlayırsa,
+         * onu təmizləyirik (məsələn "0" və ya "01").
+         */
+
+        if (value.length > 0 && value.charAt(0) === "0") {
+
+            value = value.replace(/^0+/, "");
+
+        }
+
+        $(this).val(value);
+
+    });
+
+
+
+    /*
+     * Klaviatura ilə qadağan olunmuş simvolları bloklayırıq:
+     * e, E, +, -, ., ,
+     */
+
+    $("#quantity").on("keydown", function (e) {
+
+        const forbiddenKeys = [
+            "e",
+            "E",
+            "+",
+            "-",
+            ".",
+            ","
+        ];
+
+        if (forbiddenKeys.indexOf(e.key) !== -1) {
+
+            e.preventDefault();
+
+        }
+
+    });
+
+
+
+    /*
+     * Paste zamanı da yalnız rəqəmləri və maksimum 3 simvolu saxlayırıq.
+     */
+
+    $("#quantity").on("paste", function (e) {
+
+        e.preventDefault();
+
+        const pasted =
+            (e.originalEvent || e)
+                .clipboardData
+                .getData("text");
+
+        let value =
+            pasted
+                .replace(/\D/g, "")
+                .substring(0, 3);
+
+        if (value.length > 0 && value.charAt(0) === "0") {
+
+            value = value.replace(/^0+/, "");
+
+        }
+
+        $(this).val(value);
+
+    });
+
 
     /* =====================================================
        PRODUCT DESCRIPTION
@@ -771,7 +854,9 @@ $(document).ready(function () {
 
             if (
                 quantity === "" ||
-                Number(quantity) <= 0
+                Number(quantity) <= 0 ||
+                Number(quantity) > 999 ||
+                !/^\d{1,3}$/.test(quantity)
             ) {
 
                 showError(
